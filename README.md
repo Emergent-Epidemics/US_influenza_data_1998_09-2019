@@ -1,4 +1,4 @@
-## Code and data for influenza in the United States (1998- Sept. 2019)
+## Code and data for influenza in the United States (1998- Jan 2020)
 
 ### Citation
 N/A
@@ -7,10 +7,10 @@ N/A
 The .R files contain the code to build the data files and some summary figures.  In line comments mention some key gaps. 
 
 ### Data
-1. ILINet.csv - US CDC FluView https://gis.cdc.gov/grasp/fluview/fluportaldashboard.html. Downloaded on Sept. 24th 2019.
-2. WHO_NREVSS_Clinical_Labs.csv - US CDC FluView https://gis.cdc.gov/grasp/fluview/fluportaldashboard.html. Downloaded on Sept. 24th 2019.
-3. WHO_NREVSS_Combined_prior_to_2015_16.csv - US CDC FluView https://gis.cdc.gov/grasp/fluview/fluportaldashboard.html. Downloaded on Sept. 24th 2019.
-4. WHO_NREVSS_Public_Health_Labs.csv - US CDC FluView https://gis.cdc.gov/grasp/fluview/fluportaldashboard.html. Downloaded on Sept. 24th 2019.
+1. ILINet.csv - US CDC FluView https://gis.cdc.gov/grasp/fluview/fluportaldashboard.html. Downloaded on Jan. 27th 2020.
+2. WHO_NREVSS_Clinical_Labs.csv - US CDC FluView https://gis.cdc.gov/grasp/fluview/fluportaldashboard.html. Downloaded on Jan. 27th 2020.
+3. WHO_NREVSS_Combined_prior_to_2015_16.csv - US CDC FluView https://gis.cdc.gov/grasp/fluview/fluportaldashboard.html. Downloaded on Jan. 27th 2020.
+4. WHO_NREVSS_Public_Health_Labs.csv - US CDC FluView https://gis.cdc.gov/grasp/fluview/fluportaldashboard.html. Downloaded on Jan. 27th 2020.
 5. us_pops.csv - Data were copy/pasted from https://www.multpl.com/united-states-population/table/by-year on Sept. 24th 2019.  They ballpark look right, but we should circle back and use US census data.
 
 ### CDC Disclaimer

@@ -22,17 +22,22 @@ time_stamp <- as.numeric(Sys.time())
 ######
 #data#
 ######
-ili <- read.csv("Data/ILINet.csv")
-lab_old <- read.csv("Data/WHO_NREVSS_Combined_prior_to_2015_16.csv", skip = 1)
-lab_new <- read.csv("Data/WHO_NREVSS_Clinical_Labs.csv", skip = 1)
-pop <- read.csv("Data/us_pops.csv")
+ili <- read.csv("Data/ILINet.csv", skip = 1, stringsAsFactors = FALSE)
+lab_old <- read.csv("Data/WHO_NREVSS_Combined_prior_to_2015_16.csv", skip = 1, stringsAsFactors = FALSE)
+lab_new <- read.csv("Data/WHO_NREVSS_Clinical_Labs.csv", skip = 1, stringsAsFactors = FALSE)
+pop <- read.csv("Data/us_pops.csv", skip = 1, stringsAsFactors = FALSE)
 pops <- pop$Value[match(ili$YEAR, pop$Date)]*1000000 #US pop is in millions 
+
+ili$X.UNWEIGHTED.ILI <- as.numeric(ili$X.UNWEIGHTED.ILI)
+lab_old$PERCENT.POSITIVE <- as.numeric(lab_old$PERCENT.POSITIVE)
+lab_new$PERCENT.POSITIVE <- as.numeric(lab_new$PERCENT.POSITIVE)
+ili$WEEK <- as.numeric(ili$WEEK)
 
 ############
 #Build data#
 ############
 #1. Multiply ili by percent pos. from WHO labs
-ili_raw_raw <- ili$X..WEIGHTED.ILI
+ili_raw_raw <- ili$X.UNWEIGHTED.ILI
 ili_raw <- ili_raw_raw/100
 lab_pos_raw <- c(lab_old$PERCENT.POSITIVE, lab_new$PERCENT.POSITIVE) #NOTE should add a code check here that the dates line up (checked manually on Oct. 7th 2019)
 lab_pos <- lab_pos_raw/100
@@ -57,7 +62,7 @@ pan2 <- which(ili$WEEK > 33 & ili$YEAR == 2009 | ili$WEEK <= 20 & ili$YEAR == 20
 season[pan2] <- "2009 Pandemic Second Wave"
 
 #3. building data file
-out <- data.frame(season, ili$YEAR, ili$WEEK, flu_ili_who, flu_ili_who_corrected, ili$X..WEIGHTED.ILI, lab_pos, pops)
+out <- data.frame(season, ili$YEAR, ili$WEEK, flu_ili_who, flu_ili_who_corrected, ili$X.UNWEIGHTED.ILI, lab_pos, pops)
 colnames(out) <- c("Season", "Year", "Week", "Estimated_total_flu_US_ILI_WHO",  "Estimated_total_flu_US_ILI_WHO_RolfesCorrected", "ILI_per_pop_weighted", "Percent_Pos_Labs", "US_pop")
 
 if(save_results == TRUE){
