@@ -12,6 +12,7 @@ The .R files contain the code to build the data files and some summary figures. 
 3. WHO_NREVSS_Combined_prior_to_2015_16.csv - US CDC FluView https://gis.cdc.gov/grasp/fluview/fluportaldashboard.html. Downloaded on Jan. 27th 2020.
 4. WHO_NREVSS_Public_Health_Labs.csv - US CDC FluView https://gis.cdc.gov/grasp/fluview/fluportaldashboard.html. Downloaded on Jan. 27th 2020.
 5. us_pops.csv - Data were copy/pasted from https://www.multpl.com/united-states-population/table/by-year on Sept. 24th 2019.  They ballpark look right, but we should circle back and use US census data.
+6. Biosense2_resp_Dallase_Denton_Ellis_Johnson_Parker_Tarrant.csv - Weekly BioSense 2.0 data were extracted from an online repository (see link). Data are the percent of emergency department visits for upper respiratory infection, based on classification of free-text chief complaint entries. Data were collected from https://www.google.com/publicdata/explore?ds=z46e2n1b69u8mu_
 
 ### CDC Disclaimer
 This was copy/pasted from https://gis.cdc.gov/grasp/fluview/fluportaldashboard.html on Oct 7th 2019
